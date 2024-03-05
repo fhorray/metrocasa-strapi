@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_plantas_plantas",
+  "info": {
+    "displayName": "planta",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "planta_title": {
+      "type": "enumeration",
+      "enum": [
+        "um_dormitorio",
+        "dois_dormitorios",
+        "um_dormitorio_plus_studio",
+        "um_dormitorio_plus_office",
+        "cobertura_duplex",
+        "studio",
+        "garden",
+        "penthouse"
+      ]
+    },
+    "planta_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
