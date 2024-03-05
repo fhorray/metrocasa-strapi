@@ -414,6 +414,7 @@ export interface ApiImovelImovel extends Schema.CollectionType {
     logo: Attribute.Media;
     fachada: Attribute.Media;
     planta_comp: Attribute.Component<'plantas.planta', true>;
+    slug: Attribute.UID<'api::imovel.imovel', 'title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
