@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_facilities_facilities",
+  "info": {
+    "displayName": "facility",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "facility": {
+      "type": "enumeration",
+      "enum": [
+        "Academia",
+        "Bicicletário",
+        "Brinquedoteca",
+        "Churrasqueira",
+        "Churrasqueira com Pergolado",
+        "Coworking",
+        "Delivery Space",
+        "Ducha",
+        "Espaço com Espelho D’água",
+        "Espaço Cross Training",
+        "Espaço Gourmet",
+        "Espaço Kids",
+        "Espaço Leitura",
+        "Espaço Multiuso",
+        "Espaço Pet Care",
+        "Espaço Sport Bar",
+        "Espaço Zen",
+        "Fitness Externo",
+        "Hall de Acesso",
+        "Hall Social",
+        "Lavanderia",
+        "Living",
+        "Lobby",
+        "Lounge",
+        "Market",
+        "Paisagismo",
+        "Patinete Place",
+        "Pet Place",
+        "Piscina",
+        "Playground",
+        "Portaria",
+        "Portaria com Clausura",
+        "Praça da Fogueira",
+        "Praça de Convivência",
+        "Praça de Leitura",
+        "Quadra Poliesportiva",
+        "Quadra Recreativa",
+        "Redário",
+        "Sala de Estudos",
+        "Salão de Festas",
+        "Salão de Jogos",
+        "Sauna",
+        "Sky Lounge",
+        "Solário",
+        "Spa / Sauna",
+        "Sport Play"
+      ]
+    }
+  }
+}

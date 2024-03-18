@@ -52,6 +52,125 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "address": {
+      "type": "text"
+    },
+    "main_gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "datasheet": {
+      "type": "blocks"
+    },
+    "facilities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "facilities.facility"
+    },
+    "about_the_region": {
+      "type": "richtext"
+    },
+    "decor": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "zone": {
+      "type": "enumeration",
+      "enum": [
+        "Centro",
+        "Leste",
+        "Norte",
+        "Oeste",
+        "Sul"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Lançamento",
+        "Em Obras",
+        "Pronto Para Morar"
+      ]
+    },
+    "neighborhoods": {
+      "type": "enumeration",
+      "enum": [
+        "Aclimação",
+        "Aricanduva",
+        "Artur Alvim",
+        "Bela Vista",
+        "Berrini",
+        "Cambuci",
+        "Campo Belo",
+        "Campo Limpo",
+        "Cangaíba",
+        "Casa Verde",
+        "Centro",
+        "Congonhas",
+        "Cupecê",
+        "Dom Bosco",
+        "Estação Lapa",
+        "Estação Sacomã",
+        "Freguesia do Ó",
+        "Giovanni Gronchi",
+        "Guilhermina Esperança",
+        "Interlagos",
+        "Ipiranga",
+        "Itaquera",
+        "Jaçanã",
+        "Jaraguá",
+        "Jardim Aeroporto",
+        "Jardim Boa Esperança",
+        "Jardim Jabaquara",
+        "Jardim Miriam",
+        "Jardim Paulista",
+        "João Paulo I",
+        "Lapa",
+        "Liberdade",
+        "Mooca",
+        "Morumbi",
+        "Panamby",
+        "Parque do Carmo",
+        "Penha",
+        "Pinheiros",
+        "Pirituba",
+        "Real Parque",
+        "República",
+        "Sacoma",
+        "Santa Cruz",
+        "Santo Amaro",
+        "São Miguel",
+        "Saúde",
+        "Vila Carmosina",
+        "Vila das Belezas",
+        "Vila Dom Pedro I",
+        "Vila dos Remédios",
+        "Vila Ema",
+        "Vila Esperança",
+        "Vila Gomes",
+        "Vila Matilde",
+        "Vila Pereira Barreto",
+        "Vila Prudente",
+        "Vila Ré",
+        "Vila Romana",
+        "Vila Sônia",
+        "Vila Sylvia"
+      ]
     }
   }
 }
