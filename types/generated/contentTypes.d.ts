@@ -362,6 +362,153 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiBannerBanner extends Schema.CollectionType {
+  collectionName: 'banners';
+  info: {
+    singularName: 'banner';
+    pluralName: 'banners';
+    displayName: 'Banners';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner_title: Attribute.String;
+    banner_link: Attribute.String;
+    desktop_image: Attribute.Media;
+    mobile_image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiImovelImovel extends Schema.CollectionType {
+  collectionName: 'imoveis';
+  info: {
+    singularName: 'imovel';
+    pluralName: 'imoveis';
+    displayName: 'Im\u00F3veis';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    subtitle: Attribute.Text;
+    description: Attribute.RichText;
+    logo: Attribute.Media;
+    fachada: Attribute.Media;
+    planta_comp: Attribute.Component<'plantas.planta', true>;
+    address: Attribute.Text;
+    main_gallery: Attribute.Media;
+    datasheet: Attribute.Blocks;
+    facilities: Attribute.Component<'facilities.facility', true>;
+    about_the_region: Attribute.RichText;
+    decor: Attribute.Media;
+    zone: Attribute.Enumeration<
+      ['Centro', 'Zona Leste', 'Zona Norte', 'Zona Oeste', 'Zona Sul']
+    >;
+    status: Attribute.Enumeration<
+      ['Lan\u00E7amento', 'Em Obras', 'Pronto Para Morar']
+    >;
+    neighborhoods: Attribute.Enumeration<
+      [
+        'Aclima\u00E7\u00E3o',
+        'Aricanduva',
+        'Artur Alvim',
+        'Bela Vista',
+        'Berrini',
+        'Cambuci',
+        'Campo Belo',
+        'Campo Limpo',
+        'Canga\u00EDba',
+        'Casa Verde',
+        'Centro',
+        'Congonhas',
+        'Cupec\u00EA',
+        'Dom Bosco',
+        'Esta\u00E7\u00E3o Lapa',
+        'Esta\u00E7\u00E3o Sacom\u00E3',
+        'Freguesia do \u00D3',
+        'Giovanni Gronchi',
+        'Guilhermina Esperan\u00E7a',
+        'Interlagos',
+        'Ipiranga',
+        'Itaquera',
+        'Ja\u00E7an\u00E3',
+        'Jaragu\u00E1',
+        'Jardim Aeroporto',
+        'Jardim Boa Esperan\u00E7a',
+        'Jardim Jabaquara',
+        'Jardim Miriam',
+        'Jardim Paulista',
+        'Jo\u00E3o Paulo I',
+        'Lapa',
+        'Liberdade',
+        'Mooca',
+        'Morumbi',
+        'Panamby',
+        'Parque do Carmo',
+        'Penha',
+        'Pinheiros',
+        'Pirituba',
+        'Real Parque',
+        'Rep\u00FAblica',
+        'Sacoma',
+        'Santa Cruz',
+        'Santo Amaro',
+        'S\u00E3o Miguel',
+        'Sa\u00FAde',
+        'Vila Carmosina',
+        'Vila das Belezas',
+        'Vila Dom Pedro I',
+        'Vila dos Rem\u00E9dios',
+        'Vila Ema',
+        'Vila Esperan\u00E7a',
+        'Vila Gomes',
+        'Vila Matilde',
+        'Vila Pereira Barreto',
+        'Vila Prudente',
+        'Vila R\u00E9',
+        'Vila Romana',
+        'Vila S\u00F4nia',
+        'Vila Sylvia'
+      ]
+    >;
+    slug: Attribute.UID<'api::imovel.imovel', 'title'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::imovel.imovel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::imovel.imovel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -783,151 +930,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiBannerBanner extends Schema.CollectionType {
-  collectionName: 'banners';
-  info: {
-    singularName: 'banner';
-    pluralName: 'banners';
-    displayName: 'Banners';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    banner_title: Attribute.String;
-    banner_link: Attribute.String;
-    desktop_image: Attribute.Media;
-    mobile_image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiImovelImovel extends Schema.CollectionType {
-  collectionName: 'imoveis';
-  info: {
-    singularName: 'imovel';
-    pluralName: 'imoveis';
-    displayName: 'Im\u00F3veis';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    subtitle: Attribute.Text;
-    description: Attribute.RichText;
-    logo: Attribute.Media;
-    fachada: Attribute.Media;
-    planta_comp: Attribute.Component<'plantas.planta', true>;
-    slug: Attribute.UID<'api::imovel.imovel', 'title'>;
-    address: Attribute.Text;
-    main_gallery: Attribute.Media;
-    datasheet: Attribute.Blocks;
-    facilities: Attribute.Component<'facilities.facility', true>;
-    about_the_region: Attribute.RichText;
-    decor: Attribute.Media;
-    zone: Attribute.Enumeration<['Centro', 'Leste', 'Norte', 'Oeste', 'Sul']>;
-    status: Attribute.Enumeration<
-      ['Lan\u00E7amento', 'Em Obras', 'Pronto Para Morar']
-    >;
-    neighborhoods: Attribute.Enumeration<
-      [
-        'Aclima\u00E7\u00E3o',
-        'Aricanduva',
-        'Artur Alvim',
-        'Bela Vista',
-        'Berrini',
-        'Cambuci',
-        'Campo Belo',
-        'Campo Limpo',
-        'Canga\u00EDba',
-        'Casa Verde',
-        'Centro',
-        'Congonhas',
-        'Cupec\u00EA',
-        'Dom Bosco',
-        'Esta\u00E7\u00E3o Lapa',
-        'Esta\u00E7\u00E3o Sacom\u00E3',
-        'Freguesia do \u00D3',
-        'Giovanni Gronchi',
-        'Guilhermina Esperan\u00E7a',
-        'Interlagos',
-        'Ipiranga',
-        'Itaquera',
-        'Ja\u00E7an\u00E3',
-        'Jaragu\u00E1',
-        'Jardim Aeroporto',
-        'Jardim Boa Esperan\u00E7a',
-        'Jardim Jabaquara',
-        'Jardim Miriam',
-        'Jardim Paulista',
-        'Jo\u00E3o Paulo I',
-        'Lapa',
-        'Liberdade',
-        'Mooca',
-        'Morumbi',
-        'Panamby',
-        'Parque do Carmo',
-        'Penha',
-        'Pinheiros',
-        'Pirituba',
-        'Real Parque',
-        'Rep\u00FAblica',
-        'Sacoma',
-        'Santa Cruz',
-        'Santo Amaro',
-        'S\u00E3o Miguel',
-        'Sa\u00FAde',
-        'Vila Carmosina',
-        'Vila das Belezas',
-        'Vila Dom Pedro I',
-        'Vila dos Rem\u00E9dios',
-        'Vila Ema',
-        'Vila Esperan\u00E7a',
-        'Vila Gomes',
-        'Vila Matilde',
-        'Vila Pereira Barreto',
-        'Vila Prudente',
-        'Vila R\u00E9',
-        'Vila Romana',
-        'Vila S\u00F4nia',
-        'Vila Sylvia'
-      ]
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::imovel.imovel',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::imovel.imovel',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -938,6 +940,8 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::banner.banner': ApiBannerBanner;
+      'api::imovel.imovel': ApiImovelImovel;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -946,8 +950,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::banner.banner': ApiBannerBanner;
-      'api::imovel.imovel': ApiImovelImovel;
     }
   }
 }

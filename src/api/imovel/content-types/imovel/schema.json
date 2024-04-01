@@ -49,10 +49,6 @@
       "repeatable": true,
       "component": "plantas.planta"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
     "address": {
       "type": "text"
     },
@@ -93,10 +89,10 @@
       "type": "enumeration",
       "enum": [
         "Centro",
-        "Leste",
-        "Norte",
-        "Oeste",
-        "Sul"
+        "Zona Leste",
+        "Zona Norte",
+        "Zona Oeste",
+        "Zona Sul"
       ]
     },
     "status": {
@@ -171,6 +167,10 @@
         "Vila Sônia",
         "Vila Sylvia"
       ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }
