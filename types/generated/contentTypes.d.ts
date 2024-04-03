@@ -416,7 +416,6 @@ export interface ApiImovelImovel extends Schema.CollectionType {
     planta_comp: Attribute.Component<'plantas.planta', true>;
     address: Attribute.Text;
     main_gallery: Attribute.Media;
-    datasheet: Attribute.Blocks;
     facilities: Attribute.Component<'facilities.facility', true>;
     about_the_region: Attribute.RichText;
     decor: Attribute.Media;
@@ -491,6 +490,7 @@ export interface ApiImovelImovel extends Schema.CollectionType {
       ]
     >;
     slug: Attribute.UID<'api::imovel.imovel', 'title'>;
+    datasheet: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

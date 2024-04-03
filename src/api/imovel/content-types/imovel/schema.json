@@ -63,9 +63,6 @@
         "audios"
       ]
     },
-    "datasheet": {
-      "type": "blocks"
-    },
     "facilities": {
       "type": "component",
       "repeatable": true,
@@ -171,6 +168,9 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "datasheet": {
+      "type": "richtext"
     }
   }
 }
