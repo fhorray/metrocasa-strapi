@@ -419,9 +419,7 @@ export interface ApiImovelImovel extends Schema.CollectionType {
     facilities: Attribute.Component<'facilities.facility', true>;
     about_the_region: Attribute.RichText;
     decor: Attribute.Media;
-    zone: Attribute.Enumeration<
-      ['Centro', 'Zona Leste', 'Zona Norte', 'Zona Oeste', 'Zona Sul']
-    >;
+    zone: Attribute.Enumeration<['Centro', 'Leste', 'Norte', 'Oeste', 'Sul']>;
     status: Attribute.Enumeration<
       ['Lan\u00E7amento', 'Em Obras', 'Pronto Para Morar']
     >;

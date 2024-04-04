@@ -86,10 +86,10 @@
       "type": "enumeration",
       "enum": [
         "Centro",
-        "Zona Leste",
-        "Zona Norte",
-        "Zona Oeste",
-        "Zona Sul"
+        "Leste",
+        "Norte",
+        "Oeste",
+        "Sul"
       ]
     },
     "status": {
