@@ -171,6 +171,15 @@
     },
     "datasheet": {
       "type": "richtext"
+    },
+    "video_background": {
+      "type": "string"
+    },
+    "video_hero": {
+      "type": "string"
+    },
+    "tour_virtual": {
+      "type": "string"
     }
   }
 }
