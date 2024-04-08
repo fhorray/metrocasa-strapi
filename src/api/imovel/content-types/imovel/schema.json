@@ -63,11 +63,6 @@
         "audios"
       ]
     },
-    "facilities": {
-      "type": "component",
-      "repeatable": true,
-      "component": "facilities.facility"
-    },
     "about_the_region": {
       "type": "richtext"
     },
@@ -82,27 +77,77 @@
         "audios"
       ]
     },
-    "zone": {
-      "type": "enumeration",
-      "enum": [
-        "Centro",
-        "Leste",
-        "Norte",
-        "Oeste",
-        "Sul"
-      ]
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "Lançamento",
-        "Em Obras",
-        "Pronto Para Morar"
-      ]
+    "datasheet": {
+      "type": "richtext"
+    },
+    "video_background": {
+      "type": "string"
+    },
+    "video_hero": {
+      "type": "string"
+    },
+    "tour_virtual": {
+      "type": "string"
+    },
+    "facilities": {
+      "type": "customField",
+      "options": [
+        "Academia",
+        "Bicicletário",
+        "Brinquedoteca",
+        "Churrasqueira",
+        "Churrasqueira com Pergolado",
+        "Coworking",
+        "Delivery Space",
+        "Ducha",
+        "Espaço com Espelho D’água",
+        "Espaço Cross Training",
+        "Espaço Gourmet",
+        "Espaço Kids",
+        "Espaço Leitura",
+        "Espaço Multiuso",
+        "Espaço Pet Care",
+        "Espaço Sport Bar",
+        "Espaço Zen",
+        "Fitness Externo",
+        "Hall de Acesso",
+        "Hall Social",
+        "Lavanderia",
+        "Living",
+        "Lobby",
+        "Lounge",
+        "Market",
+        "Paisagismo",
+        "Patinete Place",
+        "Pet Place",
+        "Piscina",
+        "Playground",
+        "Portaria",
+        "Portaria com Clausura",
+        "Praça da Fogueira",
+        "Praça de Convivência",
+        "Praça de Leitura",
+        "Quadra Poliesportiva",
+        "Quadra Recreativa",
+        "Redário",
+        "Sala de Estudos",
+        "Salão de Festas",
+        "Salão de Jogos",
+        "Sauna",
+        "Sky Lounge",
+        "Solário",
+        "Spa / Sauna",
+        "Sport Play"
+      ],
+      "customField": "plugin::multi-select.multi-select"
     },
     "neighborhoods": {
-      "type": "enumeration",
-      "enum": [
+      "type": "customField",
+      "options": [
         "Aclimação",
         "Aricanduva",
         "Artur Alvim",
@@ -163,23 +208,31 @@
         "Vila Romana",
         "Vila Sônia",
         "Vila Sylvia"
-      ]
+      ],
+      "customField": "plugin::multi-select.multi-select"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
+    "zone": {
+      "type": "customField",
+      "options": [
+        "Centro",
+        "Leste",
+        "Norte",
+        "Oeste",
+        "Sul"
+      ],
+      "customField": "plugin::multi-select.multi-select"
     },
-    "datasheet": {
-      "type": "richtext"
+    "status": {
+      "type": "customField",
+      "options": [
+        "Lançamento",
+        "Em Obras",
+        "Pronto Para Morar"
+      ],
+      "customField": "plugin::multi-select.multi-select"
     },
-    "video_background": {
-      "type": "string"
-    },
-    "video_hero": {
-      "type": "string"
-    },
-    "tour_virtual": {
-      "type": "string"
+    "activate_planta_section": {
+      "type": "boolean"
     }
   }
 }
