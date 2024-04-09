@@ -410,16 +410,12 @@ export interface ApiImovelImovel extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     subtitle: Attribute.Text;
-    description: Attribute.RichText;
     logo: Attribute.Media;
     fachada: Attribute.Media;
     planta_comp: Attribute.Component<'plantas.planta', true>;
-    address: Attribute.Text;
     main_gallery: Attribute.Media;
-    about_the_region: Attribute.RichText;
     decor: Attribute.Media;
     slug: Attribute.UID<'api::imovel.imovel', 'title'>;
-    datasheet: Attribute.RichText;
     video_background: Attribute.String;
     video_hero: Attribute.String;
     tour_virtual: Attribute.String;
@@ -552,6 +548,33 @@ export interface ApiImovelImovel extends Schema.CollectionType {
         ['Lan\u00E7amento', 'Em Obras', 'Pronto Para Morar']
       >;
     activate_planta_section: Attribute.Boolean;
+    address: Attribute.String;
+    address_json: Attribute.JSON;
+    about_the_region: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    datasheet: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    materiais: Attribute.Component<'imoveis.materiais'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

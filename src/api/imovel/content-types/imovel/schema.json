@@ -18,9 +18,6 @@
     "subtitle": {
       "type": "text"
     },
-    "description": {
-      "type": "richtext"
-    },
     "logo": {
       "type": "media",
       "multiple": false,
@@ -49,9 +46,6 @@
       "repeatable": true,
       "component": "plantas.planta"
     },
-    "address": {
-      "type": "text"
-    },
     "main_gallery": {
       "type": "media",
       "multiple": true,
@@ -62,9 +56,6 @@
         "videos",
         "audios"
       ]
-    },
-    "about_the_region": {
-      "type": "richtext"
     },
     "decor": {
       "type": "media",
@@ -80,9 +71,6 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
-    },
-    "datasheet": {
-      "type": "richtext"
     },
     "video_background": {
       "type": "string"
@@ -233,6 +221,41 @@
     },
     "activate_planta_section": {
       "type": "boolean"
+    },
+    "address": {
+      "type": "string"
+    },
+    "address_json": {
+      "type": "json"
+    },
+    "about_the_region": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "datasheet": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "materiais": {
+      "type": "component",
+      "repeatable": false,
+      "component": "imoveis.materiais"
     }
   }
 }
