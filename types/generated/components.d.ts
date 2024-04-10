@@ -60,32 +60,6 @@ export interface FacilitiesFacility extends Schema.Component {
   };
 }
 
-export interface ImoveisMateriais extends Schema.Component {
-  collectionName: 'components_imoveis_materiais';
-  info: {
-    displayName: 'Materiais';
-    icon: 'stack';
-    description: '';
-  };
-  attributes: {
-    ri: Attribute.String;
-    books: Attribute.JSON;
-  };
-}
-
-export interface LayoutLink extends Schema.Component {
-  collectionName: 'components_layout_links';
-  info: {
-    displayName: 'Link';
-    icon: 'link';
-    description: '';
-  };
-  attributes: {
-    url: Attribute.String;
-    text: Attribute.String;
-  };
-}
-
 export interface PlantasPlanta extends Schema.Component {
   collectionName: 'components_plantas_plantas';
   info: {
@@ -114,8 +88,6 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'facilities.facility': FacilitiesFacility;
-      'imoveis.materiais': ImoveisMateriais;
-      'layout.link': LayoutLink;
       'plantas.planta': PlantasPlanta;
     }
   }

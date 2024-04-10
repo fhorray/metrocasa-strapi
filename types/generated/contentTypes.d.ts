@@ -574,7 +574,8 @@ export interface ApiImovelImovel extends Schema.CollectionType {
           preset: 'rich';
         }
       >;
-    materiais: Attribute.Component<'imoveis.materiais'>;
+    materiais: Attribute.JSON;
+    active_on_materiais: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

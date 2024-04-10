@@ -253,9 +253,10 @@
       "customField": "plugin::ckeditor.CKEditor"
     },
     "materiais": {
-      "type": "component",
-      "repeatable": false,
-      "component": "imoveis.materiais"
+      "type": "json"
+    },
+    "active_on_materiais": {
+      "type": "boolean"
     }
   }
 }
