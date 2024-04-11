@@ -594,6 +594,73 @@ export interface ApiImovelImovel extends Schema.CollectionType {
   };
 }
 
+export interface ApiPostPost extends Schema.CollectionType {
+  collectionName: 'posts';
+  info: {
+    singularName: 'post';
+    pluralName: 'posts';
+    displayName: 'Posts';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    tags: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Decora\u00E7\u00E3o',
+          'Curiosidades',
+          'Dicas & Videos',
+          'Dicas Metrocasa',
+          'Fa\u00E7a voc\u00EA mesmo',
+          'Finan\u00E7as',
+          'Investimentos',
+          'Localiza\u00E7\u00E3o',
+          'Meu primeiro apartamento',
+          'Mobilidade',
+          'Morar em condom\u00EDnio',
+          'Qualidade de Vida',
+          'Reformas',
+          'Regi\u00E3o',
+          'Sem categoria',
+          'Turismo',
+          ''
+        ]
+      >;
+    slug: Attribute.UID<'api::post.post', 'title'>;
+    capa: Attribute.Media;
+    zona: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Zona Leste',
+          'Zona Norte',
+          'Zona\u00A0Oeste',
+          'Zona\u00A0Sul',
+          'Centro'
+        ]
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -927,7 +994,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -956,6 +1022,21 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    cargos: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Super',
+          'Editor',
+          'Corretor',
+          'Marketing',
+          'RH',
+          'CAC',
+          'Superintendente',
+          'Gerente'
+        ]
+      >;
+    profile_image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1032,6 +1113,7 @@ declare module '@strapi/types' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::banner.banner': ApiBannerBanner;
       'api::imovel.imovel': ApiImovelImovel;
+      'api::post.post': ApiPostPost;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
