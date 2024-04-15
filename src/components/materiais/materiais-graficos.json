@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_materiais_materiais_graficos",
+  "info": {
+    "displayName": "Material Gráficos",
+    "icon": "crop",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

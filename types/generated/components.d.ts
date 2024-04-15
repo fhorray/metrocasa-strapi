@@ -60,6 +60,60 @@ export interface FacilitiesFacility extends Schema.Component {
   };
 }
 
+export interface MateriaisBookDeValorizacao extends Schema.Component {
+  collectionName: 'components_materiais_book_de_valorizacaos';
+  info: {
+    displayName: 'Book de Valoriza\u00E7\u00E3o';
+    icon: 'layer';
+    description: '';
+  };
+  attributes: {
+    book_de_valorizacao: Attribute.Media;
+    title: Attribute.String;
+  };
+}
+
+export interface MateriaisLinkUtil extends Schema.Component {
+  collectionName: 'components_materiais_link_utils';
+  info: {
+    displayName: 'Link \u00DAtil';
+    icon: 'information';
+  };
+  attributes: {
+    title: Attribute.String;
+    link: Attribute.String;
+  };
+}
+
+export interface MateriaisMateriaisGraficos extends Schema.Component {
+  collectionName: 'components_materiais_materiais_graficos';
+  info: {
+    displayName: 'Material Gr\u00E1ficos';
+    icon: 'crop';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    media: Attribute.Media;
+  };
+}
+
+export interface MateriaisMateriais extends Schema.Component {
+  collectionName: 'components_materiais_materiais';
+  info: {
+    displayName: 'Campanha da Semana';
+    icon: 'folder';
+    description: '';
+  };
+  attributes: {
+    criativo_mobile: Attribute.Media;
+    criativo_desktop: Attribute.Media;
+    material_de_apoio: Attribute.Media;
+    relampago: Attribute.Media;
+    flyers: Attribute.Media;
+  };
+}
+
 export interface PlantasPlanta extends Schema.Component {
   collectionName: 'components_plantas_plantas';
   info: {
@@ -88,6 +142,10 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'facilities.facility': FacilitiesFacility;
+      'materiais.book-de-valorizacao': MateriaisBookDeValorizacao;
+      'materiais.link-util': MateriaisLinkUtil;
+      'materiais.materiais-graficos': MateriaisMateriaisGraficos;
+      'materiais.materiais': MateriaisMateriais;
       'plantas.planta': PlantasPlanta;
     }
   }

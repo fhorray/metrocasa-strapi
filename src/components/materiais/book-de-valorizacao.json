@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_materiais_book_de_valorizacaos",
+  "info": {
+    "displayName": "Book de Valorização",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "book_de_valorizacao": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

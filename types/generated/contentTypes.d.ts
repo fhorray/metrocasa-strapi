@@ -594,6 +594,47 @@ export interface ApiImovelImovel extends Schema.CollectionType {
   };
 }
 
+export interface ApiMaterialMaterial extends Schema.SingleType {
+  collectionName: 'materiais';
+  info: {
+    singularName: 'material';
+    pluralName: 'materiais';
+    displayName: 'Materiais';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    campanha_semanal: Attribute.Component<'materiais.materiais'>;
+    books_valorizacao: Attribute.Component<
+      'materiais.book-de-valorizacao',
+      true
+    >;
+    fb_google_ads: Attribute.Media;
+    links_uteis: Attribute.Component<'materiais.link-util', true>;
+    materiais_graficos: Attribute.Component<
+      'materiais.materiais-graficos',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::material.material',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::material.material',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPostPost extends Schema.CollectionType {
   collectionName: 'posts';
   info: {
@@ -651,6 +692,11 @@ export interface ApiPostPost extends Schema.CollectionType {
           'Centro'
         ]
       >;
+    author: Attribute.Relation<
+      'api::post.post',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1113,6 +1159,7 @@ declare module '@strapi/types' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::banner.banner': ApiBannerBanner;
       'api::imovel.imovel': ApiImovelImovel;
+      'api::material.material': ApiMaterialMaterial;
       'api::post.post': ApiPostPost;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

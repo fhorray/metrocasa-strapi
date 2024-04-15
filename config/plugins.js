@@ -4,6 +4,11 @@ module.exports = ({ env }) => ({
       jwt: {
         expiresIn: "5d",
       },
+      providerOptions: {
+        localServer: {
+          maxage: 300000,
+        },
+      },
     },
   },
 });

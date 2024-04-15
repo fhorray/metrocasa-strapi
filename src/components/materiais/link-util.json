@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_materiais_link_utils",
+  "info": {
+    "displayName": "Link Útil",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

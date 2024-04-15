@@ -68,6 +68,11 @@
         "Centro"
       ],
       "customField": "plugin::multi-select.multi-select"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }
