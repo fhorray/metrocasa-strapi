@@ -576,6 +576,7 @@ export interface ApiImovelImovel extends Schema.CollectionType {
       >;
     materiais: Attribute.JSON;
     active_on_materiais: Attribute.Boolean;
+    panoramas: Attribute.Component<'imoveis.panorama', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

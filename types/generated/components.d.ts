@@ -60,6 +60,25 @@ export interface FacilitiesFacility extends Schema.Component {
   };
 }
 
+export interface ImoveisPanorama extends Schema.Component {
+  collectionName: 'components_imoveis_panoramas';
+  info: {
+    displayName: 'panorama';
+    icon: 'code';
+  };
+  attributes: {
+    name: Attribute.String;
+    position: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'[10, 10, 10]'>;
+    panorama_image: Attribute.Media;
+    links_to: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'[0, 1, 2, 3]'>;
+    link_id: Attribute.Integer;
+  };
+}
+
 export interface MateriaisBookDeValorizacao extends Schema.Component {
   collectionName: 'components_materiais_book_de_valorizacaos';
   info: {
@@ -142,6 +161,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'facilities.facility': FacilitiesFacility;
+      'imoveis.panorama': ImoveisPanorama;
       'materiais.book-de-valorizacao': MateriaisBookDeValorizacao;
       'materiais.link-util': MateriaisLinkUtil;
       'materiais.materiais-graficos': MateriaisMateriaisGraficos;

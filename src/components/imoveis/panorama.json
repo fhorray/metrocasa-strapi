@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_imoveis_panoramas",
+  "info": {
+    "displayName": "panorama",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "text",
+      "default": "[10, 10, 10]",
+      "required": true
+    },
+    "panorama_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "links_to": {
+      "type": "text",
+      "default": "[0, 1, 2, 3]",
+      "required": true
+    },
+    "link_id": {
+      "type": "integer"
+    }
+  }
+}

@@ -257,6 +257,11 @@
     },
     "active_on_materiais": {
       "type": "boolean"
+    },
+    "panoramas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "imoveis.panorama"
     }
   }
 }
