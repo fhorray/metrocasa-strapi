@@ -259,9 +259,7 @@
       "type": "boolean"
     },
     "panoramas": {
-      "type": "component",
-      "repeatable": true,
-      "component": "imoveis.panorama"
+      "type": "json"
     }
   }
 }

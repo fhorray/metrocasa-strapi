@@ -65,6 +65,7 @@ export interface ImoveisPanorama extends Schema.Component {
   info: {
     displayName: 'panorama';
     icon: 'code';
+    description: '';
   };
   attributes: {
     name: Attribute.String;
@@ -76,6 +77,7 @@ export interface ImoveisPanorama extends Schema.Component {
       Attribute.Required &
       Attribute.DefaultTo<'[0, 1, 2, 3]'>;
     link_id: Attribute.Integer;
+    static_image_url: Attribute.String;
   };
 }
 
