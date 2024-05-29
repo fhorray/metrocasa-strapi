@@ -9,3 +9,5 @@ module.exports = {
     ],
   },
 };
+
+// TODO: Implementar a lógica de exclusão de usuários antigos

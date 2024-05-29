@@ -414,7 +414,6 @@ export interface ApiImovelImovel extends Schema.CollectionType {
     fachada: Attribute.Media;
     planta_comp: Attribute.Component<'plantas.planta', true>;
     main_gallery: Attribute.Media;
-    decor: Attribute.Media;
     slug: Attribute.UID<'api::imovel.imovel', 'title'>;
     video_background: Attribute.String;
     video_hero: Attribute.String;
@@ -577,6 +576,7 @@ export interface ApiImovelImovel extends Schema.CollectionType {
     materiais: Attribute.JSON;
     active_on_materiais: Attribute.Boolean;
     panoramas: Attribute.JSON;
+    evolucao_obras: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

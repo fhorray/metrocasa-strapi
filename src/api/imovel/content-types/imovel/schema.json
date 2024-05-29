@@ -57,17 +57,6 @@
         "audios"
       ]
     },
-    "decor": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "slug": {
       "type": "uid",
       "targetField": "title"
@@ -259,6 +248,9 @@
       "type": "boolean"
     },
     "panoramas": {
+      "type": "json"
+    },
+    "evolucao_obras": {
       "type": "json"
     }
   }
