@@ -362,352 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiBannerBanner extends Schema.CollectionType {
-  collectionName: 'banners';
-  info: {
-    singularName: 'banner';
-    pluralName: 'banners';
-    displayName: 'Banners';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    banner_title: Attribute.String;
-    banner_link: Attribute.String;
-    desktop_image: Attribute.Media;
-    mobile_image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiImovelImovel extends Schema.CollectionType {
-  collectionName: 'imoveis';
-  info: {
-    singularName: 'imovel';
-    pluralName: 'imoveis';
-    displayName: 'Im\u00F3veis';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    subtitle: Attribute.Text;
-    logo: Attribute.Media;
-    fachada: Attribute.Media;
-    planta_comp: Attribute.Component<'plantas.planta', true>;
-    main_gallery: Attribute.Media;
-    slug: Attribute.UID<'api::imovel.imovel', 'title'>;
-    video_background: Attribute.String;
-    video_hero: Attribute.String;
-    tour_virtual: Attribute.String;
-    facilities: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'Academia',
-          'Biciclet\u00E1rio',
-          'Brinquedoteca',
-          'Churrasqueira',
-          'Churrasqueira com Pergolado',
-          'Coworking',
-          'Delivery Space',
-          'Ducha',
-          'Espa\u00E7o com Espelho D\u2019\u00E1gua',
-          'Espa\u00E7o Cross Training',
-          'Espa\u00E7o Gourmet',
-          'Espa\u00E7o Kids',
-          'Espa\u00E7o Leitura',
-          'Espa\u00E7o Multiuso',
-          'Espa\u00E7o Pet Care',
-          'Espa\u00E7o Sport Bar',
-          'Espa\u00E7o Zen',
-          'Fitness Externo',
-          'Hall de Acesso',
-          'Hall Social',
-          'Lavanderia',
-          'Living',
-          'Lobby',
-          'Lounge',
-          'Market',
-          'Paisagismo',
-          'Patinete Place',
-          'Pet Place',
-          'Piscina',
-          'Playground',
-          'Portaria',
-          'Portaria com Clausura',
-          'Pra\u00E7a da Fogueira',
-          'Pra\u00E7a de Conviv\u00EAncia',
-          'Pra\u00E7a de Leitura',
-          'Quadra Poliesportiva',
-          'Quadra Recreativa',
-          'Red\u00E1rio',
-          'Sala de Estudos',
-          'Sal\u00E3o de Festas',
-          'Sal\u00E3o de Jogos',
-          'Sauna',
-          'Sky Lounge',
-          'Sol\u00E1rio',
-          'Spa / Sauna',
-          'Sport Play'
-        ]
-      >;
-    neighborhoods: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'Aclima\u00E7\u00E3o',
-          'Aricanduva',
-          'Artur Alvim',
-          'Bela Vista',
-          'Berrini',
-          'Cambuci',
-          'Campo Belo',
-          'Campo Limpo',
-          'Canga\u00EDba',
-          'Casa Verde',
-          'Centro',
-          'Congonhas',
-          'Cupec\u00EA',
-          'Dom Bosco',
-          'Esta\u00E7\u00E3o Lapa',
-          'Esta\u00E7\u00E3o Sacom\u00E3',
-          'Freguesia do \u00D3',
-          'Giovanni Gronchi',
-          'Guilhermina Esperan\u00E7a',
-          'Interlagos',
-          'Ipiranga',
-          'Itaquera',
-          'Ja\u00E7an\u00E3',
-          'Jaragu\u00E1',
-          'Jardim Aeroporto',
-          'Jardim Boa Esperan\u00E7a',
-          'Jardim Jabaquara',
-          'Jardim Miriam',
-          'Jardim Paulista',
-          'Jo\u00E3o Paulo I',
-          'Lapa',
-          'Liberdade',
-          'Mooca',
-          'Morumbi',
-          'Panamby',
-          'Parque do Carmo',
-          'Penha',
-          'Pinheiros',
-          'Pirituba',
-          'Real Parque',
-          'Rep\u00FAblica',
-          'Sacoma',
-          'Santa Cruz',
-          'Santo Amaro',
-          'S\u00E3o Miguel',
-          'Sa\u00FAde',
-          'Vila Carmosina',
-          'Vila das Belezas',
-          'Vila Dom Pedro I',
-          'Vila dos Rem\u00E9dios',
-          'Vila Ema',
-          'Vila Esperan\u00E7a',
-          'Vila Gomes',
-          'Vila Matilde',
-          'Vila Pereira Barreto',
-          'Vila Prudente',
-          'Vila R\u00E9',
-          'Vila Romana',
-          'Vila S\u00F4nia',
-          'Vila Sylvia'
-        ]
-      >;
-    zone: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        ['Centro', 'Leste', 'Norte', 'Oeste', 'Sul']
-      >;
-    status: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        ['Lan\u00E7amento', 'Em Obras', 'Pronto Para Morar']
-      >;
-    activate_planta_section: Attribute.Boolean;
-    address: Attribute.String;
-    address_json: Attribute.JSON;
-    about_the_region: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
-    datasheet: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
-    description: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
-    materiais: Attribute.JSON;
-    active_on_materiais: Attribute.Boolean;
-    panoramas: Attribute.JSON;
-    evolucao_obras: Attribute.JSON;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::imovel.imovel',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::imovel.imovel',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiMaterialMaterial extends Schema.SingleType {
-  collectionName: 'materiais';
-  info: {
-    singularName: 'material';
-    pluralName: 'materiais';
-    displayName: 'Materiais';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    campanha_semanal: Attribute.Component<'materiais.materiais'>;
-    books_valorizacao: Attribute.Component<
-      'materiais.book-de-valorizacao',
-      true
-    >;
-    fb_google_ads: Attribute.Media;
-    links_uteis: Attribute.Component<'materiais.link-util', true>;
-    materiais_graficos: Attribute.Component<
-      'materiais.materiais-graficos',
-      true
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::material.material',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::material.material',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPostPost extends Schema.CollectionType {
-  collectionName: 'posts';
-  info: {
-    singularName: 'post';
-    pluralName: 'posts';
-    displayName: 'Posts';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    content: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
-    tags: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'Decora\u00E7\u00E3o',
-          'Curiosidades',
-          'Dicas & Videos',
-          'Dicas Metrocasa',
-          'Fa\u00E7a voc\u00EA mesmo',
-          'Finan\u00E7as',
-          'Investimentos',
-          'Localiza\u00E7\u00E3o',
-          'Meu primeiro apartamento',
-          'Mobilidade',
-          'Morar em condom\u00EDnio',
-          'Qualidade de Vida',
-          'Reformas',
-          'Regi\u00E3o',
-          'Sem categoria',
-          'Turismo',
-          ''
-        ]
-      >;
-    slug: Attribute.UID<'api::post.post', 'title'>;
-    capa: Attribute.Media;
-    zona: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'Zona Leste',
-          'Zona Norte',
-          'Zona\u00A0Oeste',
-          'Zona\u00A0Sul',
-          'Centro'
-        ]
-      >;
-    author: Attribute.Relation<
-      'api::post.post',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -1083,7 +737,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
           'Gerente'
         ]
       >;
-    profile_image: Attribute.Media;
+    profile_image: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1148,6 +802,394 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiBannerBanner extends Schema.CollectionType {
+  collectionName: 'banners';
+  info: {
+    singularName: 'banner';
+    pluralName: 'banners';
+    displayName: 'Banners';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner_title: Attribute.String;
+    banner_link: Attribute.String;
+    desktop_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    mobile_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFeiraoFeirao extends Schema.SingleType {
+  collectionName: 'feiraos';
+  info: {
+    singularName: 'feirao';
+    pluralName: 'feiraos';
+    displayName: 'Feir\u00E3o';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    imagem: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::feirao.feirao',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::feirao.feirao',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiImovelImovel extends Schema.CollectionType {
+  collectionName: 'imoveis';
+  info: {
+    singularName: 'imovel';
+    pluralName: 'imoveis';
+    displayName: 'Im\u00F3veis';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    subtitle: Attribute.Text;
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    fachada: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    planta_comp: Attribute.Component<'plantas.planta', true>;
+    main_gallery: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    slug: Attribute.UID<'api::imovel.imovel', 'title'>;
+    video_background: Attribute.String;
+    video_hero: Attribute.String;
+    tour_virtual: Attribute.String;
+    facilities: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Academia',
+          'Biciclet\u00E1rio',
+          'Brinquedoteca',
+          'Churrasqueira',
+          'Churrasqueira com Pergolado',
+          'Coworking',
+          'Delivery Space',
+          'Ducha',
+          'Espa\u00E7o com Espelho D\u2019\u00E1gua',
+          'Espa\u00E7o Cross Training',
+          'Espa\u00E7o Gourmet',
+          'Espa\u00E7o Kids',
+          'Espa\u00E7o Leitura',
+          'Espa\u00E7o Multiuso',
+          'Espa\u00E7o Pet Care',
+          'Espa\u00E7o Sport Bar',
+          'Espa\u00E7o Zen',
+          'Fitness Externo',
+          'Hall de Acesso',
+          'Hall Social',
+          'Lavanderia',
+          'Living',
+          'Lobby',
+          'Lounge',
+          'Market',
+          'Paisagismo',
+          'Patinete Place',
+          'Pet Place',
+          'Piscina',
+          'Playground',
+          'Portaria',
+          'Portaria com Clausura',
+          'Pra\u00E7a da Fogueira',
+          'Pra\u00E7a de Conviv\u00EAncia',
+          'Pra\u00E7a de Leitura',
+          'Quadra Poliesportiva',
+          'Quadra Recreativa',
+          'Red\u00E1rio',
+          'Sala de Estudos',
+          'Sal\u00E3o de Festas',
+          'Sal\u00E3o de Jogos',
+          'Sauna',
+          'Sky Lounge',
+          'Sol\u00E1rio',
+          'Spa / Sauna',
+          'Sport Play'
+        ]
+      >;
+    neighborhoods: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Aclima\u00E7\u00E3o',
+          'Aricanduva',
+          'Artur Alvim',
+          'Bela Vista',
+          'Berrini',
+          'Cambuci',
+          'Campo Belo',
+          'Campo Limpo',
+          'Canga\u00EDba',
+          'Casa Verde',
+          'Centro',
+          'Congonhas',
+          'Cupec\u00EA',
+          'Dom Bosco',
+          'Esta\u00E7\u00E3o Lapa',
+          'Esta\u00E7\u00E3o Sacom\u00E3',
+          'Freguesia do \u00D3',
+          'Giovanni Gronchi',
+          'Guilhermina Esperan\u00E7a',
+          'Interlagos',
+          'Ipiranga',
+          'Itaquera',
+          'Ja\u00E7an\u00E3',
+          'Jaragu\u00E1',
+          'Jardim Aeroporto',
+          'Jardim Boa Esperan\u00E7a',
+          'Jardim Jabaquara',
+          'Jardim Miriam',
+          'Jardim Paulista',
+          'Jo\u00E3o Paulo I',
+          'Lapa',
+          'Liberdade',
+          'Mooca',
+          'Morumbi',
+          'Panamby',
+          'Parque do Carmo',
+          'Penha',
+          'Pinheiros',
+          'Pirituba',
+          'Real Parque',
+          'Rep\u00FAblica',
+          'Sacoma',
+          'Santa Cruz',
+          'Santo Amaro',
+          'S\u00E3o Miguel',
+          'Sa\u00FAde',
+          'Vila Carmosina',
+          'Vila das Belezas',
+          'Vila Dom Pedro I',
+          'Vila dos Rem\u00E9dios',
+          'Vila Ema',
+          'Vila Esperan\u00E7a',
+          'Vila Gomes',
+          'Vila Matilde',
+          'Vila Pereira Barreto',
+          'Vila Prudente',
+          'Vila R\u00E9',
+          'Vila Romana',
+          'Vila S\u00F4nia',
+          'Vila Sylvia'
+        ]
+      >;
+    zone: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        ['Centro', 'Leste', 'Norte', 'Oeste', 'Sul']
+      >;
+    status: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        ['Lan\u00E7amento', 'Em Obras', 'Pronto Para Morar']
+      >;
+    activate_planta_section: Attribute.Boolean;
+    address: Attribute.String;
+    address_json: Attribute.JSON;
+    about_the_region: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    datasheet: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    materiais: Attribute.JSON;
+    active_on_materiais: Attribute.Boolean;
+    panoramas: Attribute.JSON;
+    evolucao_obras: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::imovel.imovel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::imovel.imovel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMaterialMaterial extends Schema.SingleType {
+  collectionName: 'materiais';
+  info: {
+    singularName: 'material';
+    pluralName: 'materiais';
+    displayName: 'Materiais';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    campanha_semanal: Attribute.Component<'materiais.materiais'>;
+    books_valorizacao: Attribute.Component<
+      'materiais.book-de-valorizacao',
+      true
+    >;
+    fb_google_ads: Attribute.Media<'images', true>;
+    links_uteis: Attribute.Component<'materiais.link-util', true>;
+    materiais_graficos: Attribute.Component<
+      'materiais.materiais-graficos',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::material.material',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::material.material',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPostPost extends Schema.CollectionType {
+  collectionName: 'posts';
+  info: {
+    singularName: 'post';
+    pluralName: 'posts';
+    displayName: 'Posts';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    tags: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Decora\u00E7\u00E3o',
+          'Curiosidades',
+          'Dicas & Videos',
+          'Dicas Metrocasa',
+          'Fa\u00E7a voc\u00EA mesmo',
+          'Finan\u00E7as',
+          'Investimentos',
+          'Localiza\u00E7\u00E3o',
+          'Meu primeiro apartamento',
+          'Mobilidade',
+          'Morar em condom\u00EDnio',
+          'Qualidade de Vida',
+          'Reformas',
+          'Regi\u00E3o',
+          'Sem categoria',
+          'Turismo',
+          ''
+        ]
+      >;
+    slug: Attribute.UID<'api::post.post', 'title'>;
+    capa: Attribute.Media<'images'>;
+    zona: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Zona Leste',
+          'Zona Norte',
+          'Zona\u00A0Oeste',
+          'Zona\u00A0Sul',
+          'Centro'
+        ]
+      >;
+    author: Attribute.Relation<
+      'api::post.post',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1158,10 +1200,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::banner.banner': ApiBannerBanner;
-      'api::imovel.imovel': ApiImovelImovel;
-      'api::material.material': ApiMaterialMaterial;
-      'api::post.post': ApiPostPost;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -1170,6 +1208,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::banner.banner': ApiBannerBanner;
+      'api::feirao.feirao': ApiFeiraoFeirao;
+      'api::imovel.imovel': ApiImovelImovel;
+      'api::material.material': ApiMaterialMaterial;
+      'api::post.post': ApiPostPost;
     }
   }
 }

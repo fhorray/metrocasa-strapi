@@ -72,7 +72,7 @@ export interface ImoveisPanorama extends Schema.Component {
     position: Attribute.Text &
       Attribute.Required &
       Attribute.DefaultTo<'[10, 10, 10]'>;
-    panorama_image: Attribute.Media;
+    panorama_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     links_to: Attribute.Text &
       Attribute.Required &
       Attribute.DefaultTo<'[0, 1, 2, 3]'>;
@@ -89,7 +89,9 @@ export interface MateriaisBookDeValorizacao extends Schema.Component {
     description: '';
   };
   attributes: {
-    book_de_valorizacao: Attribute.Media;
+    book_de_valorizacao: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     title: Attribute.String;
   };
 }
@@ -115,7 +117,7 @@ export interface MateriaisMateriaisGraficos extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    media: Attribute.Media;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -127,11 +129,13 @@ export interface MateriaisMateriais extends Schema.Component {
     description: '';
   };
   attributes: {
-    criativo_mobile: Attribute.Media;
-    criativo_desktop: Attribute.Media;
-    material_de_apoio: Attribute.Media;
-    relampago: Attribute.Media;
-    flyers: Attribute.Media;
+    criativo_mobile: Attribute.Media<'images'>;
+    criativo_desktop: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    material_de_apoio: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    relampago: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    flyers: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -155,7 +159,7 @@ export interface PlantasPlanta extends Schema.Component {
         'penthouse'
       ]
     >;
-    planta_image: Attribute.Media;
+    planta_image: Attribute.Media<'images'>;
   };
 }
 
