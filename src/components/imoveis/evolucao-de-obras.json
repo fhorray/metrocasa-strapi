@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_imoveis_evolucao_de_obras",
+  "info": {
+    "displayName": "Evolução de Obras",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "is_active": {
+      "type": "boolean"
+    },
+    "percentual_de_obras": {
+      "type": "integer"
+    },
+    "demolicao": {
+      "type": "integer"
+    },
+    "terraplanagem": {
+      "type": "integer"
+    },
+    "fundacao_superficial": {
+      "type": "integer"
+    },
+    "fundacao_profunda": {
+      "type": "integer"
+    },
+    "estrutura": {
+      "type": "integer"
+    },
+    "fechamento": {
+      "type": "integer"
+    },
+    "acabamento": {
+      "type": "integer"
+    },
+    "gallery": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

@@ -1,12 +1,12 @@
 {
   "collectionName": "components_facilities_facilities",
   "info": {
-    "displayName": "facility",
+    "displayName": "facilidades",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "facility": {
+    "facilidades": {
       "type": "enumeration",
       "enum": [
         "Academia",

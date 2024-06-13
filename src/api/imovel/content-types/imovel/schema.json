@@ -44,7 +44,7 @@
       "displayName": "planta",
       "type": "component",
       "repeatable": true,
-      "component": "plantas.planta"
+      "component": "imoveis.planta"
     },
     "main_gallery": {
       "type": "media",
@@ -241,17 +241,21 @@
       },
       "customField": "plugin::ckeditor.CKEditor"
     },
-    "materiais": {
-      "type": "json"
-    },
-    "active_on_materiais": {
-      "type": "boolean"
-    },
     "panoramas": {
       "type": "json"
     },
+    "materiais": {
+      "type": "component",
+      "repeatable": false,
+      "component": "imoveis.books"
+    },
     "evolucao_obras": {
-      "type": "json"
+      "type": "component",
+      "repeatable": false,
+      "component": "imoveis.evolucao-de-obras"
+    },
+    "address_link": {
+      "type": "text"
     }
   }
 }

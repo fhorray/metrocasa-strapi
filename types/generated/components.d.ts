@@ -1,13 +1,50 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface FacilitiesFacility extends Schema.Component {
-  collectionName: 'components_facilities_facilities';
+export interface ImoveisBooks extends Schema.Component {
+  collectionName: 'components_imoveis_books';
   info: {
-    displayName: 'facility';
+    displayName: 'Materiais';
+    icon: 'book';
     description: '';
   };
   attributes: {
-    facility: Attribute.Enumeration<
+    a3: Attribute.Media<'files'>;
+    fase_1: Attribute.Media<'files'>;
+    fase_2: Attribute.Media<'files'>;
+    fase_3: Attribute.Media<'files'>;
+    ri: Attribute.Media<'files'>;
+    is_active: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ImoveisEvolucaoDeObras extends Schema.Component {
+  collectionName: 'components_imoveis_evolucao_de_obras';
+  info: {
+    displayName: 'Evolu\u00E7\u00E3o de Obras';
+    icon: 'check';
+  };
+  attributes: {
+    is_active: Attribute.Boolean;
+    percentual_de_obras: Attribute.Integer;
+    demolicao: Attribute.Integer;
+    terraplanagem: Attribute.Integer;
+    fundacao_superficial: Attribute.Integer;
+    fundacao_profunda: Attribute.Integer;
+    estrutura: Attribute.Integer;
+    fechamento: Attribute.Integer;
+    acabamento: Attribute.Integer;
+    gallery: Attribute.Media<'images', true>;
+  };
+}
+
+export interface ImoveisFacility extends Schema.Component {
+  collectionName: 'components_facilities_facilities';
+  info: {
+    displayName: 'facilidades';
+    description: '';
+  };
+  attributes: {
+    facilidades: Attribute.Enumeration<
       [
         'Academia',
         'Biciclet\u00E1rio',
@@ -81,6 +118,30 @@ export interface ImoveisPanorama extends Schema.Component {
   };
 }
 
+export interface ImoveisPlanta extends Schema.Component {
+  collectionName: 'components_plantas_plantas';
+  info: {
+    displayName: 'plantas';
+    icon: 'book';
+    description: '';
+  };
+  attributes: {
+    planta_title: Attribute.Enumeration<
+      [
+        'um_dormitorio',
+        'dois_dormitorios',
+        'um_dormitorio_plus_studio',
+        'um_dormitorio_plus_office',
+        'cobertura_duplex',
+        'studio',
+        'garden',
+        'penthouse'
+      ]
+    >;
+    planta_image: Attribute.Media<'images'>;
+  };
+}
+
 export interface MateriaisBookDeValorizacao extends Schema.Component {
   collectionName: 'components_materiais_book_de_valorizacaos';
   info: {
@@ -139,40 +200,18 @@ export interface MateriaisMateriais extends Schema.Component {
   };
 }
 
-export interface PlantasPlanta extends Schema.Component {
-  collectionName: 'components_plantas_plantas';
-  info: {
-    displayName: 'planta';
-    icon: 'book';
-    description: '';
-  };
-  attributes: {
-    planta_title: Attribute.Enumeration<
-      [
-        'um_dormitorio',
-        'dois_dormitorios',
-        'um_dormitorio_plus_studio',
-        'um_dormitorio_plus_office',
-        'cobertura_duplex',
-        'studio',
-        'garden',
-        'penthouse'
-      ]
-    >;
-    planta_image: Attribute.Media<'images'>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'facilities.facility': FacilitiesFacility;
+      'imoveis.books': ImoveisBooks;
+      'imoveis.evolucao-de-obras': ImoveisEvolucaoDeObras;
+      'imoveis.facility': ImoveisFacility;
       'imoveis.panorama': ImoveisPanorama;
+      'imoveis.planta': ImoveisPlanta;
       'materiais.book-de-valorizacao': MateriaisBookDeValorizacao;
       'materiais.link-util': MateriaisLinkUtil;
       'materiais.materiais-graficos': MateriaisMateriaisGraficos;
       'materiais.materiais': MateriaisMateriais;
-      'plantas.planta': PlantasPlanta;
     }
   }
 }

@@ -891,7 +891,7 @@ export interface ApiImovelImovel extends Schema.CollectionType {
     subtitle: Attribute.Text;
     logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     fachada: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    planta_comp: Attribute.Component<'plantas.planta', true>;
+    planta_comp: Attribute.Component<'imoveis.planta', true>;
     main_gallery: Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -1055,10 +1055,10 @@ export interface ApiImovelImovel extends Schema.CollectionType {
           preset: 'rich';
         }
       >;
-    materiais: Attribute.JSON;
-    active_on_materiais: Attribute.Boolean;
     panoramas: Attribute.JSON;
-    evolucao_obras: Attribute.JSON;
+    materiais: Attribute.Component<'imoveis.books'>;
+    evolucao_obras: Attribute.Component<'imoveis.evolucao-de-obras'>;
+    address_link: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
